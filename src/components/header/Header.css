@@ -1,0 +1,22 @@
+
+.header {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 1rem;
+}
+
+.header-content {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    gap: 0.5rem;
+}
