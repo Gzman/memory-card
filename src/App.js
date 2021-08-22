@@ -2,8 +2,6 @@ import { Header } from "./components/header/Header"
 import { Score } from "./components/header/Score"
 import { Logo } from "./components/header/Logo"
 import { Memory } from "./components/memory/Memory"
-import { Card } from "./components/memory/Card"
-import { memoryData } from "./data/memoryData"
 
 function App() {
   return (
@@ -19,17 +17,7 @@ function App() {
         </div>
       </Header>
       <main>
-        <Memory>
-          {
-            memoryData.map((cardData) =>
-              <Card
-                key={cardData.id}
-                title={cardData.title}
-                imageSrc={cardData.src}
-              />
-            )
-          }
-        </Memory>
+        <Memory />
       </main>
     </div>
   );
