@@ -17,7 +17,6 @@ const Header = ({ score, bestScore, maxPoints }) => {
                     <Score label="Best Score:" value={bestScore} />
                 </div>
             </div>
-            {score === maxPoints && <h3 className="win-message"></h3>}
         </div >
     )
 }
