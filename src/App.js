@@ -6,21 +6,35 @@ import { useScore } from "./hooks/useScore"
 import { memoryData } from "./data/memoryData"
 
 function App() {
-  const { score, increaseScore, resetScore } = useScore();
+  const {
+    score,
+    bestScore,
+    increaseScore,
+    resetScore
+  } = useScore();
+
+  const description = "Don't click on any more than once.";
+  const winMessage = "Congratulations, you won!";
+  
   return (
     <div className="App">
       <Header>
         <Logo />
         <div className="header-content">
-          <h3 className="description">{score === memoryData.length ? "You Won" : "Don't click on any more than once."}</h3>
+          <h3 className="description">{score === memoryData.length ? winMessage : description}</h3>
           <div className="scores">
             <Score label="Score:" value={score} />
-            <Score label="Best Score:" value={0} />
+            <Score label="Best Score:" value={bestScore} />
           </div>
         </div>
       </Header>
       <main>
-        <Memory memoryData={memoryData} score={score} increaseScore={increaseScore} resetScore={resetScore} />
+        <Memory
+          memoryData={memoryData}
+          score={score}
+          increaseScore={increaseScore}
+          resetScore={resetScore}
+        />
       </main>
     </div>
   );
