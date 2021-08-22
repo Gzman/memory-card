@@ -1,10 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { Card } from "./Card"
-import { memoryData } from "../../data/memoryData"
 import { shuffle } from "../../util/shuffle"
 import "./Memory.css"
 
-const Memory = () => {
+const Memory = ({memoryData, score, increaseScore, resetScore}) => {
     return (
         <div className="memory">
             {
@@ -13,6 +12,9 @@ const Memory = () => {
                         key={cardData.id}
                         title={cardData.title}
                         imageSrc={cardData.src}
+                        resetCard={score === 0}
+                        increaseScore={increaseScore}
+                        resetScore={resetScore}
                     />
                 )
             }
