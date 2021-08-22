@@ -5,7 +5,7 @@ const Score = ({ label, value }) => {
     return (
         <div className="score">
             <p className="score-label">{label}</p>
-            <p className="score-value">{value}</p>
+            <p className="score-value pop-score">{value}</p>
         </div>
     )
 }

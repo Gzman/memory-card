@@ -9,10 +9,13 @@
   padding: 0;
   margin: 0;
 
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 html {
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: 'Cormorant Garamond', serif;
 }
+ h1 {
+   font-weight: 600;
+ }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./Memory.css"
 
-const Card = ({ imageSrc, title, resetCard = false, increaseScore, resetScore }) => {
+const Card = ({ imageSrc, title, reset = false, increaseScore, resetScore, winStyle }) => {
     const [isClicked, setIsClicked] = useState(false);
     const handleOnClick = () => {
         if (!isClicked) {
@@ -13,12 +13,12 @@ const Card = ({ imageSrc, title, resetCard = false, increaseScore, resetScore })
     }
 
     useEffect(() => {
-        resetCard && setIsClicked(false);
-    }, [resetCard]);
+        reset && setIsClicked(false);
+    }, [reset]);
 
     return (
-        <div className="card" onClick={handleOnClick}>
-            <div className="card-image">{imageSrc}</div>
+        <div className={`card ${winStyle}`} onClick={handleOnClick}>
+            <img className="card-image" src={imageSrc} alt={title} ></img>
             <p className="card-title">{title}</p>
         </div>
     )
